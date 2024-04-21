@@ -19,8 +19,8 @@ export default function Register({ flashMessage }: RegistrationProps) {
 
     const [userFormData, setUserFormData] = useState<UserFormDataType>(
         {
-            firstName: '',
-            lastName: '',
+            first_name: '',
+            last_name: '',
             email: '',
             password: '',
             confirmPassword: ''
@@ -43,7 +43,7 @@ export default function Register({ flashMessage }: RegistrationProps) {
             flashMessage(response.error, 'danger');
         } else {
             const newUser = response.data!
-            flashMessage(`Congrats user ${newUser.firstName} ${newUser.lastName} has been registered!`, 'success')
+            flashMessage(`Congrats user ${newUser.first_name} ${newUser.last_name} has been registered!`, 'success')
             navigate('/');
         }
     }
@@ -57,11 +57,11 @@ export default function Register({ flashMessage }: RegistrationProps) {
             <Card>
                 <Card.Body>
                     <Form onSubmit={handleFormSubmit}>
-                        <Form.Label htmlFor='firstName'>First Name</Form.Label>
-                        <Form.Control id='firstName' name='firstName' placeholder='Enter First Name' value={userFormData.firstName} onChange={handleInputChange}/>
+                        <Form.Label htmlFor='first_name'>First Name</Form.Label>
+                        <Form.Control id='first_name' name='first_name' placeholder='Enter First Name' value={userFormData.first_name} onChange={handleInputChange}/>
 
-                        <Form.Label htmlFor='lastName'>Last Name</Form.Label>
-                        <Form.Control id='lastName' name='lastName' placeholder='Enter Last Name' value={userFormData.lastName} onChange={handleInputChange}/>
+                        <Form.Label htmlFor='last_name'>Last Name</Form.Label>
+                        <Form.Control id='last_name' name='last_name' placeholder='Enter Last Name' value={userFormData.last_name} onChange={handleInputChange}/>
 
                         <Form.Label htmlFor='email'>Email</Form.Label>
                         <Form.Control id='email' name='email' type='email' placeholder='Enter Email' value={userFormData.email} onChange={handleInputChange}/>

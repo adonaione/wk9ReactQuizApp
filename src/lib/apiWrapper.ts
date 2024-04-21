@@ -13,7 +13,7 @@ import { QuestionType, UserType, UserFormDataType } from '../types';
 
 const baseURL:string  = 'https://cae-bookstore.herokuapp.com/';
 
-const userEndpoint = '/users';
+const userEndpoint = '/user';
 const questionEndpoint = '/question/all';
 
 const apiClientNoAuth = () => axios.create({
