@@ -46,7 +46,7 @@ export default function Home({ flashMessage }: HomeProps) {
       <div>
         {Array.isArray(questions) ? (
           questions
-            .filter(q => q.question.toLowerCase().includes(searchTerm.toLowerCase()))
+            .filter(q => q.question?.toLowerCase().includes(searchTerm.toLowerCase()))
             .map(q => <QuestionCard key={q.id} question={q} />)
         ) : (
           // Handle the case when questions is not an array

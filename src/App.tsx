@@ -27,7 +27,7 @@ export default function App() {
           {/* Displays the flash message if there is one */}
           {message && <AlertMessage message={message} category={category} flashMessage={flashMessage} />}
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home flashMessage={flashMessage}/>} />
             <Route path='/register' element={<Register flashMessage={flashMessage} />} />
           </Routes>
         </Container>

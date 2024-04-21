@@ -49,7 +49,7 @@ async function getAllQuestions(): Promise<APIResponse<QuestionType[]>> {
     let error;
     try { 
         const response = await apiClientNoAuth().get(questionEndpoint); // send a get request to the question endpoint with no auth needed
-        data = response.data; // store the response data in th 'data' variable
+        data = response.data['questions']; // store the response data in th 'data' variable
     } catch (err) {
         if (axios.isAxiosError(err)) {
             error = err.response?.data; // if axios error, store the response data in the 'error' variable
